@@ -1,4 +1,4 @@
-﻿#selectType : 17金融股,ALL所有股票
+#selectType : 17金融股,ALL所有股票
 #filepath : 檔案位置
 #display : 是否只顯示部分
 #display_list : 顯示部分資料
@@ -44,10 +44,10 @@ Institutional_investors_data<- function(selectType,filepath,display,display_list
 	}
 	#取要得欄位
 	Institutional_investors_data<- cbind(clean_data[,1:5],clean_data[,9:11],clean_data[,13]+clean_data[,16],clean_data[,14]+clean_data[,17],clean_data[,12],clean_data[,19])
-	names(legal_person_data) <- c("代號","名稱","外資買入","外資賣出","外資買賣超","投信買入","投信賣出","投信買賣超",
+	names(Institutional_investors_data) <- c("代號","名稱","外資買入","外資賣出","外資買賣超","投信買入","投信賣出","投信買賣超",
 								  "自營商買入","自營商賣出","自營商買賣超","三大法人買賣超")
-	write.csv(format(legal_person_data,digits=1),paste(filepath,date,"_",selectType,".csv",sep = ''))
+	write.csv(format(Institutional_investors_data,digits=1),paste(filepath,date,"_",selectType,".csv",sep = ''))
 }
 display_list <- c(2903,2834,2883)
-legal_person_data("ALL","D://000/",TRUE,display_list)
-legal_person_data("17","D://000/",FALSE,display_list)
+Institutional_investors_data("ALL","D://000/",TRUE,display_list)
+Institutional_investors_data("17","D://000/",FALSE,display_list)
