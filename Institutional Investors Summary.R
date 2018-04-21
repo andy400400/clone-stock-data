@@ -4,8 +4,8 @@ Institutional_Investors_Summary <- function(filepath){
   #date
   date_hyphen <- toString(substring(Sys.time(),0,10))
   date <- gsub("-" , "",date_hyphen,fixed = FALSE)
-  #url <- paste("http://www.twse.com.tw/fund/BFI82U?response=csv&dayDate=",date,"&type=day",sep = "")
-  url <- paste("http://www.twse.com.tw/fund/BFI82U?response=csv&dayDate=","20180420","&type=day",sep = "")
+  url <- paste("http://www.twse.com.tw/fund/BFI82U?response=csv&dayDate=",date,"&type=day",sep = "")
+  #url <- paste("http://www.twse.com.tw/fund/BFI82U?response=csv&dayDate=","20180420","&type=day",sep = "")
   destfile <- paste(filepath,date,".csv",sep = '')
   download.file(url, destfile, mode="wb")
   #read file

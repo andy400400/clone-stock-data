@@ -7,8 +7,8 @@ Institutional_investors_data<- function(selectType,filepath,display,display_list
 	date_hyphen <- toString(substring(Sys.time(),0,10))
 	date <- gsub("-" , "",date_hyphen,fixed = FALSE)
 	#下載資料
-	#url <- paste("http://www.twse.com.tw/fund/T86?response=csv&date=",date,"&selectType=",selectType,sep = '')
-	url <- "http://www.twse.com.tw/fund/T86?response=csv&date=20180309&selectType=17"
+	url <- paste("http://www.twse.com.tw/fund/T86?response=csv&date=",date,"&selectType=",selectType,sep = '')
+	#url <- "http://www.twse.com.tw/fund/T86?response=csv&date=20180420&selectType=ALL"
 	destfile <- paste(filepath,date,".csv",sep = '')
 	download.file(url, destfile, mode="wb")
 	#讀取CSV
@@ -53,5 +53,5 @@ Institutional_investors_data<- function(selectType,filepath,display,display_list
 	if (file.exists(destfile)) file.remove(destfile)
 }
 display_list <- c(2903,2834,2883)
-Institutional_investors_data("ALL","D://000/",TRUE,display_list)
-Institutional_investors_data("17","D://000/",FALSE,display_list)
+Institutional_investors_data("ALL","C://000/",FALSE,display_list)
+Institutional_investors_data("17","C://000/",FALSE,display_list)
