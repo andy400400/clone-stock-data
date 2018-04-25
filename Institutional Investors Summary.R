@@ -1,6 +1,5 @@
 
 Institutional_Investors_Summary <- function(filepath){
-  filepath <- "C://000//"
   #date
   date_hyphen <- toString(substring(Sys.time(),0,10))
   date <- gsub("-" , "",date_hyphen,fixed = FALSE)
